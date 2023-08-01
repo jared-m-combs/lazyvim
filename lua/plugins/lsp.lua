@@ -12,10 +12,17 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      -- autoformat = false,
       servers = {
+        gopls = {},
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
+              cargo = {
+                buildScripts = {
+                  enabled = true,
+                },
+              },
               imports = {
                 granularity = {
                   group = "module",
